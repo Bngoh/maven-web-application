@@ -110,7 +110,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>PayPal</finalName>
+		<finalName>PayPal For The Wind</finalName>
 		
 		<plugins>
 			<plugin>
