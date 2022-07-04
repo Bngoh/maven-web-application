@@ -32,5 +32,6 @@ node{
         // pipeline syntax
         emailext body: 'Build status for frontend application.', recipientProviders: [developers(), buildUser(), contributor()], subject: 'Build Status', to: 'crizyryan77@gmail.com'
      }
+     */
 }
-*/
+
