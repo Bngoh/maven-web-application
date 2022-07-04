@@ -9,7 +9,6 @@ node{
     stage('2Test&Build'){
         sh "${mavenHome}/bin/mvn install"
     }
-       /*
     stage('3CodeQuality'){
         sh "${mavenHome}/bin/mvn sonar:sonar"
     }
@@ -32,6 +31,5 @@ node{
         // pipeline syntax
         emailext body: 'Build status for frontend application.', recipientProviders: [developers(), buildUser(), contributor()], subject: 'Build Status', to: 'crizyryan77@gmail.com'
      }
-     */
 }
 
