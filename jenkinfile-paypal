@@ -1,0 +1,36 @@
+node{
+    def mavenHome = tool name : 'maven3.8.6'
+    stage('1CloneCode'){
+        sh "echo running a software build and deployment project for payPal"
+        git "https://github.com/Bngoh/maven-web-application.git"
+        //sh "git clone https://github.com/Bngoh/maven-web-application.git"
+        //bat "git clone https://github.com/Bngoh/maven-web-application.git"
+    }
+    stage('2Test&Build'){
+        sh "${mavenHome}/bin/mvn install"
+    }
+       /*
+    stage('3CodeQuality'){
+        sh "${mavenHome}/bin/mvn sonar:sonar"
+    }
+    stage('4UploadArtifacts'){
+        sh "${mavenHome}/bin/mvn deploy"
+    }
+    stage('5Deploy_uat'){
+        //sh "scp ..."
+        deploy adapters: [tomcat9(credentialsId: 'New-Tomcat-cred', path: '', url: 'http://3.135.18.142:8080/')], contextPath: null, war: 'target/*war'
+    }
+    stage('6Approval'){
+        //timeout(time:9, unit: 'HOURS') {
+          //  input message: 'Application ready for deployment, please review and approve'
+        }
+    }
+    stage('7Deploy_prod'){ 
+        deploy adapters: [tomcat9(credentialsId: 'New-Tomcat-cred', path: '', url: 'http://3.135.18.142:8080/')], contextPath: null, war: 'target/*war'
+    }
+     stage('8Notification'){
+        // pipeline syntax
+        emailext body: 'Build status for frontend application.', recipientProviders: [developers(), buildUser(), contributor()], subject: 'Build Status', to: 'crizyryan77@gmail.com'
+     }
+}
+*/
